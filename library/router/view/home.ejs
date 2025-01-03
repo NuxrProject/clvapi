@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="NuxrDev">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.jpeg">
+    <title>CleveryApi || ©NuxrDev</title>
+
+    <link href="/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="/dist/css/style.min.css" rel="stylesheet">
+    <link href="/dist/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-lg">
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="nav-toggler waves-effect waves-light d-block d-lg-none" href="javascript:void(0)">
+                        <i class="ti-menu ti-close"></i>
+                    </a>
+                    <div class="navbar-brand">
+                        <a href="/">
+                            <h1 class="text-2xl">Clevery<span class="text-danger">Api</span></h1>
+                        </a>
+                    </div>
+                    <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti-more"></i>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav float-left me-auto ms-3 ps-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"
+                                id="bell" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <span style="font-weight: 600; font-size: 1.5rem;">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <div class="scroll-sidebar" data-sidebarbg="skin6">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="/" aria-expanded="false">
+                                <i data-feather="home" class="feather-icon"></i>
+                                <span class="hide-menu">Home</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="monitor" class="feather-icon"></i>
+                                    Anime
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/anime/kiryu?title=naruto" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Kiryu</span>
+                                    </a>
+                                    <a href="/api/anime/anime?query=naruto" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Anime</span>
+                                    </a>
+                                    <a href="/api/anime/manga?query=naruto" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Manga</span>
+                                    </a>
+                                    <a href="/api/anime/character?nama=urahara kisuke" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Character</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="pen-tool" class="feather-icon"></i>
+                                    Tools
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/tool/dbase64?text=" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Decode base64</span>
+                                    </a>
+                                    <a href="/api/tool/dbase64?text=CleveryMd" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Encode base64</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="package" class="feather-icon"></i>
+                                    Game
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/game/family100" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Family100</span>
+                                    </a>
+                                    <a href="/api/game/susunkata" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Susun Kata</span>
+                                    </a>
+                                    <a href="/api/game/tebakkata" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Tebak Kata</span>
+                                    </a>
+                                    <a href="/api/game/caklontong" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Cak Lontong</span>
+                                    </a>
+                                    <a href="/api/game/tebakkalimat" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Tebak Kalimat</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="user-check" class="feather-icon"></i>
+                                    Checker
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/checker/pln-subscribe?id=" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">PLN Subscribe</span>
+                                    </a>
+                                    <a href="/api/checker/mobile-legend?id=&zone=" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Mobile Legend</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="search" class="feather-icon"></i>
+                                    Searcher
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/searcher/dafont?query=poppins" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Dafont</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="/api/searcher/pinterest?query=kyoraku shinsui" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Pinterest</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="/api/searcher/wikipedia?query=handphone" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Wikipedia</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="/api/searcher/wikimedia?query=ichigo kurosaki" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Wikimedia</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="/api/searcher/stickerpack?query=gojo satoru" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Stickerpack</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="image" class="feather-icon"></i>
+                                    Converter
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/converter/remini?img=https://tinyurl.com/2daghmpj"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Remini</span>
+                                    </a>
+                                    <a href="/api/converter/tinyurl?url=https://google.com/"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Tinyurl</span>
+                                    </a>
+                                    <a href="/api/converter/topdf?img=https://tinyurl.com/2daghmpj&filename=ichigo-hollow"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">IMG to PDF</span>
+                                    </a>
+                                    <a href="/api/converter/removebg?img=https://tinyurl.com/2daghmpj"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Remove Background</span>
+                                    </a>
+                                    <a href="/api/converter/ssweb?w=1200&h=628&url=https://google.com/"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Screenshoot Website</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="edit-2" class="feather-icon"></i>
+                                    Generator
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/generator/halah?text=aku%20iki%20uku%20eke%20oko" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Halah</span>
+                                    </a>
+                                    <a href="/api/generator/hilih?text=aku%20iki%20uku%20eke%20oko" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Hilih</span>
+                                    </a>
+                                    <a href="/api/generator/huluh?text=aku%20iki%20uku%20eke%20oko" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Huluh</span>
+                                    </a>
+                                    <a href="/api/generator/heleh?text=aku%20iki%20uku%20eke%20oko" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Heleh</span>
+                                    </a>
+                                    <a href="/api/generator/holoh?text=aku%20iki%20uku%20eke%20oko" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Holoh</span>
+                                    </a>
+                                    <a href="/api/generator/openai?text=hai ai" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Chat Open AI</span>
+                                    </a>
+                                    <a href="/api/generator/name?query=rest-api" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">AI Business Name</span>
+                                    </a>
+                                    <a href="/api/generator/slogan?query=CleveryApi" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">AI Slogan Generator</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="download" class="feather-icon"></i>
+                                    Downloader
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/downloader/tiktok?url=https://vt.tiktok.com/ZSLQdtGcG/"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Tiktok</span>
+                                    </a>
+                                    <a href="/api/downloader/twitter?url=https://twitter.com/KyotoPaman54344/status/1684866402229059584?t=5UFKW9gMbtL5AYl3Vp7dQg&s=19"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Twitter</span>
+                                    </a>
+                                    <a href="/api/downloader/youtube?url=https://youtu.be/LyZhulag-qg"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Youtube</span>
+                                    </a>
+                                    <a href="/api/downloader/mediafire?url=https://www.mediafire.com/file/ve2djkjd8c5ps3w/Bot+Storev1.0-noModules.zip/file"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Mediafire</span>
+                                    </a>
+                                    <a href="/api/downloader/facebook?url=https://www.facebook.com/reel/956828448761723"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Facebook</span>
+                                    </a>
+                                    <a href="/api/downloader/instagram?url=https://www.instagram.com/reel/Cvjepkhtfr6/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=="
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Instagram</span>
+                                    </a>
+                                    <a href="/api/downloader/soundcloud?url=https://soundcloud.com/agung-pranata-839330629/yang-terdalam-noah-new-version"
+                                        class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Soundcloud</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" aria-expanded="false" href="javascript:void(0)">
+                                <span class="hide-menu">
+                                    <i data-feather="file-text" class="feather-icon"></i>
+                                    Random Text
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="/api/random/quotes" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Quotes</span>
+                                    </a>
+                                    <a href="/api/random/quotesnime" class="sidebar-link" target="_blank">
+                                        <span class="hide-menu">Quotes Anime</span>
+                                    </a>
+                                    <a href="/api/random/artinama?nama=Fajar Khairul Ikhsan" class="sidebar-link"
+                                        target="_blank">
+                                        <span class="hide-menu">Arti Nama</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="text-center mb-5">
+                                            <h3>Video Downloader</h3>
+                                        </div>
+                                        <div class="input-group">
+                                            <input type="text" id="url" class="form-control" placeholder="URL Video"
+                                                autocomplete="off">
+                                            <button type="button" class="input-group-text btn btn-danger"
+                                                id="subUrl">Submit</button>
+                                        </div>
+                                        <div class="text-center">
+                                            <small style="font-size: .6rem;">By using our service you are accepting our
+                                                <a href="#" class="link-primary">
+                                                    Terms of Use
+                                                </a>
+                                            </small>
+                                        </div>
+                                        <div id="result" class="text-center mt-5">
+                                            <div id="loading"></div>
+                                            <div class="row">
+                                                <div class="col-md-4" id="result1"></div>
+                                                <div class="col-md-8">
+                                                    <div class="row" id="result2"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer text-center text-muted">
+                All Rights Reserved by Freedash. Designed and Developed by
+                <a href="/">NuxrDev</a>.
+            </footer>
+        </div>
+    </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PYQBB06P0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2PYQBB06P0');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="/dist/js/shann.js"></script>
+    <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/dist/js/app-style-switcher.js"></script>
+    <script src="/dist/js/feather.min.js"></script>
+    <script src="/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/dist/js/sidebarmenu.js"></script>
+    <script src="/dist/js/custom.min.js"></script>
+    <script src="/assets/extra-libs/c3/d3.min.js"></script>
+    <script src="/assets/extra-libs/c3/c3.min.js"></script>
+    <script src="/assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/dist/js/pages/dashboards/dashboard1.min.js"></script>
+</body>
+
+</html>
